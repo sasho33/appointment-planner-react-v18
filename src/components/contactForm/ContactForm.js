@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './ContactForm.css';
+
 export const ContactForm = ({
   name,
   setName,
@@ -12,27 +14,24 @@ export const ContactForm = ({
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </label>
+        <label htmlFor="name">Name:</label>
+        <input name="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
 
-        <label>
-          Phone:
-          <input
-            type="text"
-            value={phone}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            pattern="[0-9]{10}" // You can adjust the pattern to your preferred phone locale
-          />
-        </label>
+        <label htmlFor="phone">Phone (10 digits):</label>
+        <input
+          type="text"
+          name="phone"
+          value={phone}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          pattern="[0-9]{10}" // You can adjust the pattern to your preferred phone locale
+        />
 
-        <label>
-          Email:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
+        <label htmlFor="email">Email:</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-        <button type="submit">Submit</button>
+        <button className="button-3" type="submit">
+          Submit
+        </button>
       </form>
     </>
   );

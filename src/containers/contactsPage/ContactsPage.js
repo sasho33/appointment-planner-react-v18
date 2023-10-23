@@ -29,8 +29,8 @@ export const ContactsPage = ({ contacts, addContact }) => {
       addContact(name, phoneNumber, email);
     }
     setName('');
-    setPhoneNumber('');
     setEmail('');
+    setPhoneNumber('');
   };
 
   /*

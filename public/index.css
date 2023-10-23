@@ -1,6 +1,6 @@
 #root {
   padding: 30px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 nav > a {
@@ -39,7 +39,7 @@ hr {
   margin: 20px 0;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   background: #03a8d8;
   border-radius: 4px;
   color: #ffffff;
@@ -49,18 +49,18 @@ input[type="submit"] {
   outline: none;
   padding: 10px 0;
   width: 100%;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin-top: 10px;
   margin-bottom: 0px;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   cursor: pointer;
 }
 
 input,
 select {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background: #ffffff;
   border: 1px solid #979797;
   border-radius: 4px;
