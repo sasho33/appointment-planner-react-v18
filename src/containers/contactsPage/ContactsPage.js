@@ -27,6 +27,8 @@ export const ContactsPage = ({ contacts, addContact }) => {
     */
     if (!dublicateCheck) {
       addContact(name, phoneNumber, email);
+    } else {
+      alert('Duplicate contact');
     }
     setName('');
     setEmail('');
@@ -56,6 +58,7 @@ export const ContactsPage = ({ contacts, addContact }) => {
       <hr />
       <section>
         <h2>Contacts</h2>
+        <TileList data={contacts} />
       </section>
     </div>
   );

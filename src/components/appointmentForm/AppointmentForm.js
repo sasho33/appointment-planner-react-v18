@@ -4,14 +4,18 @@ import { ContactPicker } from '../contactPicker/ContactPicker';
 import './AppointmentForm.css';
 
 const getTodayString = () => {
-  const [month, day, year] = new Date().toLocaleDateString('en-US').split('/');
-  return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = (today.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
+  const day = today.getDate().toString().padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
 };
 
 export const AppointmentForm = ({
   contacts,
-  title,
-  setTitle,
+  name,
+  setName,
   contact,
   setContact,
   date,
@@ -24,7 +28,7 @@ export const AppointmentForm = ({
     <>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
-        <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input type="text" name="title" value={name} onChange={(e) => setName(e.target.value)} />
         <label htmlFor="contact">Contact:</label>
         <ContactPicker
           contacts={contacts}
@@ -37,10 +41,10 @@ export const AppointmentForm = ({
           name="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          min={getTodayString}
+          min={getTodayString()}
         />
         <label htmlFor="time">Time:</label>
-        <input type="text" name="time" value={time} onChange={(e) => setTime(e.target.value)} />
+        <input type="time" name="time" value={time} onChange={(e) => setTime(e.target.value)} />
         <button className="button-3" type="submit">
           Submit
         </button>
